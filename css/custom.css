@@ -9,7 +9,7 @@
 
 .values {
   background-image: url('../images/oneku.png');
-  background-size: cover;
+  background-size: contain;
   color: #fff;
   padding-bottom: 5rem;
 }

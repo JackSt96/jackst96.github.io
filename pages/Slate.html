@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>OneKU</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+   <!-- Background
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body>
+    <!--<div class="section values">
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
+    </div>-->
+
+  <div class="top1">
+    <div class="top2">
+        <div class="top3"></div>
+    </div>
+  </div>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="four columns" style="margin-top: 0%">
+        <h3><a href = "pages/Platforms.html">Candidates</a></h3>
+        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
+      </div>
+      <div class="four columns" style="margin-top: 0%">
+        <h3><a href = "pages/Platforms.html">Platforms</a></h3>
+        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
+      </div>
+      <div class="four columns" style="margin-top: 0%">
+        <h3><a href = "pages/Platforms.html">Slate</a></h3>
+        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+  var imageHeight = parseInt($('.top3').css('height')),
+    stopHeight=imageHeight / 4,
+    imageWidth = parseInt($('.top3').css('width')),
+    leftMargin = parseInt($('.top3').css('margin-left'));
+  $( window ).scroll(function() {
+      var windowScroll = $(window).scrollTop(),
+      newHeight = imageHeight - windowScroll,
+      newWidth = imageWidth - windowScroll,
+      newLMargin = leftMargin + windowScroll/2;
+       if(newHeight > stopHeight){
+         $('.top3').css({'height': newHeight});
+         $('.top3').css({'width': newWidth});
+         $('.top3').css({'margin-left': newLMargin});
+       }else{
+           $('.top3').css({'height': stopHeight});
+       }
+
+  });
+  </script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

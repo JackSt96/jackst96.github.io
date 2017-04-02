@@ -1,101 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
-  <title>OneKU</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
-
-   <!-- Background
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
-
-
-
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
 </head>
-
 <body>
-    <!--<div class="section values">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-    </div>-->
 
-  <div class="top1">
-    <div class="top2">
-        <div class="top3"></div>
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="../images/slate/adrian janowiak.jpg" alt="Callisto" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/iClicker.jpg" alt="iClicker" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/writing.jpg" alt="Writing" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/intern.jpg" alt="Intern" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/entrepenuerial.jpg" alt="Entrepenuerial" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/remain.jpg" alt="Remain" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/uber.jpg" alt="Uber" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/rotc.jpg" alt="ROTC" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/lighting.jpg" alt="Lighting" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/accessibility.jpg" alt="Accessibility" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="../images/gender.jpg" alt="Gender" width="460" height="345">
+      </div>
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="four columns" style="margin-top: 0%">
-        <h3><a href = "pages/Platforms.html">Candidates</a></h3>
-        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
-      </div>
-      <div class="four columns" style="margin-top: 0%">
-        <h3><a href = "pages/Platforms.html">Platforms</a></h3>
-        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
-      </div>
-      <div class="four columns" style="margin-top: 0%">
-        <h3><a href = "pages/Platforms.html">Slate</a></h3>
-        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
-      </div>
-    </div>
-  </div>
+</div>
 
-
-
-  <script>
-  var imageHeight = parseInt($('.top3').css('height')),
-    stopHeight=imageHeight / 4,
-    imageWidth = parseInt($('.top3').css('width')),
-    leftMargin = parseInt($('.top3').css('margin-left'));
-  $( window ).scroll(function() {
-      var windowScroll = $(window).scrollTop(),
-      newHeight = imageHeight - windowScroll,
-      newWidth = imageWidth - windowScroll,
-      newLMargin = leftMargin + windowScroll/2;
-       if(newHeight > stopHeight){
-         $('.top3').css({'height': newHeight});
-         $('.top3').css({'width': newWidth});
-         $('.top3').css({'margin-left': newLMargin});
-       }else{
-           $('.top3').css({'height': stopHeight});
-       }
-
-  });
-  </script>
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

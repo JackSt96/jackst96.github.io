@@ -25,30 +25,79 @@
 
    <!-- Background
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
+
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+
+
+
 </head>
+
 <body>
-  <div class="section values">
-    <div class="container">
-      <div class="row">
+    <!--<div class="section values">
+      <div class="container">
+        <div class="row">
+        </div>
       </div>
+    </div>-->
+  <div class="top1">
+    <div class="top2">
+        <div class="top3"></div>
     </div>
   </div>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Under Construction</h4>
-        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
+      <div class="four columns" style="margin-top: 0%">
+        <div class="rounded box" style="margin-top: 0%">
+          <h3 style="text-align: center"><a class="button" href="pages/Candidates.html">Candidates</a></h3>
+        </div>
+      </div>
+      <div class="four columns" style="margin-top: 0%">
+        <div class="rounded box" style="margin-top: 0%">
+          <h3 style="text-align: center"><a class="button" href="pages/Platforms.html">Platforms</a></h3>
+        </div>
+      </div>
+      <div class="four columns" style="margin-top: 0%">
+        <div class="rounded box" style="margin-top: 0%">
+          <h3 style="text-align: center"><a class="button" href="pages/Slate2.html">Slate</a></h3>
+        </div>
       </div>
     </div>
   </div>
 
+  <script>
+  var imageHeight = parseInt($('.top3').css('height')),
+    stopHeight=imageHeight / 3,
+    imageWidth = parseInt($('.top3').css('width')),
+    leftMargin = parseInt($('.top3').css('margin-left'));
+  $( window ).scroll(function() {
+      var windowScroll = $(window).scrollTop(),
+      newHeight = imageHeight - windowScroll,
+      newWidth = imageWidth - windowScroll,
+      border1 = windowScroll/15,
+      border2 = windowScroll/5,
+      newLMargin = leftMargin + windowScroll/2;
+       if(newHeight > stopHeight){
+         $('.top3').css({'height': newHeight});
+         $('.top3').css({'width': newWidth});
+         $('.top3').css({'margin-left': newLMargin});
+         $('.top3').css({'border-radius': border1});
+       }else{
+           $('.top3').css({'height': stopHeight});
+       }
+
+  });
+  </script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>

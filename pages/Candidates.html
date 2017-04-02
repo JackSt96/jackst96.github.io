@@ -1,103 +1,141 @@
 <!DOCTYPE html>
+<!--
+HTML5!!! Because, ya know, carousels are all Web 2.0 and stuff!
+-->
+
 <html lang="en">
-<head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>OneKU</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/skeleton.css">
-  <link rel="stylesheet" href="../css/custom.css">
-
-   <!-- Background
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
 
 
+	<head>
+		<meta charset="utf-8" />
+		<!--
+		Meta? You want meta? Using a carousel to tell folks not to use carousels is meta!
+		-->
+		<title>One KU</title>
+		<!--
+		SPOILER ALERT: No!
+		-->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Anton|Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+		<link type="text/css" rel="stylesheet" href="../css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="../css/style.css" />
+		<link type="text/css" rel="stylesheet" href="../css/rcarousel.css" />
 
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.core.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.widget.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.rcarousel.min.js"></script>
+		<!--
+		Holy crap! ^^^^^ That's a lot of files for a simple carousel! ^^^^ Yeah, but it's jQuery, so we're cool.
+		-->
 
+		<script type="text/javascript">
+			jQuery(function($) {
+				function generatePages() {
+					var _total, i, _link;
 
+					_total = $( "#carousel" ).rcarousel( "getTotalPages" );
 
+					for ( i = 0; i < _total; i++ ) {
+						_link = $( "<a href='#'></a>" );
 
+						$(_link)
+							.bind("click", {page: i},
+								function( event ) {
+									$( "#carousel" ).rcarousel( "goToPage", event.data.page );
+									event.preventDefault();
+								}
+							)
+							.addClass( "bullet off" )
+							.appendTo( "#pages" );
+					}
 
-</head>
+					// mark first page as active
+					$( "a:eq(0)", "#pages" )
+						.removeClass( "off" )
+						.addClass( "on" )
+						.css( "background-image", "url(../images/page-on.png)" );
 
-<body>
-    <!--<div class="section values">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-    </div>-->
+				}
 
+				function pageLoaded( event, data ) {
+					$( "a.on", "#pages" )
+						.removeClass( "on" )
+						.css( "background-image", "url(../images/page-off.png)" );
 
-  <div class="top1">
-    <div class="top2">
-        <div class="top3"></div>
+					$( "a", "#pages" )
+						.eq( data.page )
+						.addClass( "on" )
+						.css( "background-image", "url(../images/page-on.png)" );
+				}
+
+				$("#carousel").rcarousel(
+					{
+						visible: 1,
+						step: 1,
+						speed: 500,
+						auto: {
+							enabled: true,
+							interval: 3000
+							// HA HA! I HATE MY USERS!!! Especially the ones that aren't speed readers.
+						},
+						width: 345,
+						height: 400,
+						start: generatePages,
+						pageLoaded: pageLoaded
+					}
+				);
+
+				$( "#ui-carousel-next" )
+					.add( "#ui-carousel-prev" )
+					.add( ".bullet" )
+					.hover(
+						function() {
+							$( this ).css( "opacity", 0.7 );
+						},
+						function() {
+							$( this ).css( "opacity", 1.0 );
+						}
+					);
+			});
+		</script>
+
+	</head>
+	<body>
+	  <header>
+	    <div class="nav">
+				<img src="../images/oneku2.png" width = "100" height = "50" id="logo" />
+	      <ul>
+	        <li class="Candidates"><a class="active" href="Candidates.html">Candidates</a></li>
+	        <li class="Platforms"><a href="Platforms.html">Platforms</a></li>
+	        <li class="Slate"><a href="Slate2.html">Slate</a></li>
+	        <li class="Stephonn"><a href="Stephonn.html">Stephonn</a></li>
+	        <li class="contact"><a href="contact.html">Contact</a></li>
+	      </ul>
+	    </div>
+	  </header>
+
+    <div>
+      <img src="../images/madymattie.jpg" width = "600" height = "400" id="logo" />
+      <p>Mattie Carter is a junior studying Journalism and Political Science from Kansas City, Missouri. She currently serves as the School of Journalism Senator and the Student Rights Committee Chair. Prior to becoming chair, she was the Student Rights Committee Vice Chair, where she helped lead efforts to revise the Student Code of Rights and Responsibilities to include more protections for survivors off-campus sexual assault and violence. In addition to her work on the Rights Committee, Mattie serves as Chair of the Student Senate Outreach Board and is the Branding and Outreach Director for The Student Legislative Awareness Board. Previously, Mattie served as a Senator for the College of Liberal Arts and Sciences, as well as the Associate Senator for the Student Rights Committee. Mattie is a member of Delta Gamma Sorority. </p>
+      <p>Mady Womack is a junior from Leawood, Kansas, studying Economics. She currently serves as the Student Senate Government Relations Director and chair of the Student Legislative Awareness Board. During her time as Student Senate Government Relations Director, Mady has focused on advocating for students on campus concealed carry, the rising cost of higher education and affirmative consent ("Yes Means Yes"). Prior to her current position, Mady has served as the Panhellenic Senator, a School of Engineering Senator, and as the Vice-Chair of the Finance Committee. In addition, she is involved with the Dole Institute of Politics Student Advisory Board and is a member of Alpha Chi Omega.</p>
     </div>
-  </div>
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="four columns" style="margin-top: 0%">
-        <h3><a href = "pages/Platforms.html">Candidates</a></h3>
-        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
-      </div>
-      <div class="four columns" style="margin-top: 0%">
-        <h3><a href = "pages/Platforms.html">Platforms</a></h3>
-        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
-      </div>
-      <div class="four columns" style="margin-top: 0%">
-        <h3><a href = "pages/Platforms.html">Slate</a></h3>
-        <p>Please check back in a few days while the updated site is being built! Meanwhile feel free to check out our <a href="https://www.facebook.com/OneKU2017/">Facebook Page</a>.</p>
-      </div>
-    </div>
-  </div>
 
+<div id="footer">
+	 <p>Built by <a href="http://twitter.com/jackst96">@Jack Stevens</a> | Contact us <a href="https://www.facebook.com/OneKU2017/">Facebook</a> | <a href="https://www.instagram.com/oneku_/">Instagram</a></p>
+</div>
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-302059-5', 'shouldiuseacarousel.com');
+  ga('send', 'pageview');
 
-  <script>
-  var imageHeight = parseInt($('.top3').css('height')),
-    stopHeight=imageHeight / 4,
-    imageWidth = parseInt($('.top3').css('width')),
-    leftMargin = parseInt($('.top3').css('margin-left'));
-  $( window ).scroll(function() {
-      var windowScroll = $(window).scrollTop(),
-      newHeight = imageHeight - windowScroll,
-      newWidth = imageWidth - windowScroll,
-      newLMargin = leftMargin + windowScroll/2;
-       if(newHeight > stopHeight){
-         $('.top3').css({'height': newHeight});
-         $('.top3').css({'width': newWidth});
-         $('.top3').css({'margin-left': newLMargin});
-       }else{
-           $('.top3').css({'height': stopHeight});
-       }
+</script>
 
-  });
-  </script>
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--
+HTML5!!! Because, ya know, carousels are all Web 2.0 and stuff!
+-->
+
+<html lang="en">
+
+
+	<head>
+		<meta charset="utf-8" />
+		<!--
+		Meta? You want meta? Using a carousel to tell folks not to use carousels is meta!
+		-->
+		<title>One KU</title>
+		<!--
+		SPOILER ALERT: No!
+		-->
+
+		<link href='http://fonts.googleapis.com/css?family=Anton|Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+		<link type="text/css" rel="stylesheet" href="../css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="../css/style.css" />
+		<link type="text/css" rel="stylesheet" href="../css/rcarousel.css" />
+
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.core.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.widget.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.rcarousel.min.js"></script>
+		<!--
+		Holy crap! ^^^^^ That's a lot of files for a simple carousel! ^^^^ Yeah, but it's jQuery, so we're cool.
+		-->
+
+		<script type="text/javascript">
+			jQuery(function($) {
+				function generatePages() {
+					var _total, i, _link;
+
+					_total = $( "#carousel" ).rcarousel( "getTotalPages" );
+
+					for ( i = 0; i < _total; i++ ) {
+						_link = $( "<a href='#'></a>" );
+
+						$(_link)
+							.bind("click", {page: i},
+								function( event ) {
+									$( "#carousel" ).rcarousel( "goToPage", event.data.page );
+									event.preventDefault();
+								}
+							)
+							.addClass( "bullet off" )
+							.appendTo( "#pages" );
+					}
+
+					// mark first page as active
+					$( "a:eq(0)", "#pages" )
+						.removeClass( "off" )
+						.addClass( "on" )
+						.css( "background-image", "url(../images/page-on.png)" );
+
+				}
+
+				function pageLoaded( event, data ) {
+					$( "a.on", "#pages" )
+						.removeClass( "on" )
+						.css( "background-image", "url(../images/page-off.png)" );
+
+					$( "a", "#pages" )
+						.eq( data.page )
+						.addClass( "on" )
+						.css( "background-image", "url(../images/page-on.png)" );
+				}
+
+				$("#carousel").rcarousel(
+					{
+						visible: 1,
+						step: 1,
+						speed: 500,
+						auto: {
+							enabled: true,
+							interval: 3000
+							// HA HA! I HATE MY USERS!!! Especially the ones that aren't speed readers.
+						},
+						width: 345,
+						height: 400,
+						start: generatePages,
+						pageLoaded: pageLoaded
+					}
+				);
+
+				$( "#ui-carousel-next" )
+					.add( "#ui-carousel-prev" )
+					.add( ".bullet" )
+					.hover(
+						function() {
+							$( this ).css( "opacity", 0.7 );
+						},
+						function() {
+							$( this ).css( "opacity", 1.0 );
+						}
+					);
+			});
+		</script>
+
+	</head>
+	<body>
+
+		<header>
+	    <div class="nav">
+				<img src="../images/oneku2.png" width = "100" height = "50" id="logo" />
+	      <ul>
+	        <li class="Candidates"><a href="Candidates.html">Candidates</a></li>
+	        <li class="Platforms"><a href="Platforms.html">Platforms</a></li>
+	        <li class="Slate"><a class="active" href="Slate2.html">Slate</a></li>
+	        <li class="Stephonn"><a href="Stephonn.html">Stephonn</a></li>
+	        <li class="contact"><a href="contact.html">Contact</a></li>
+	      </ul>
+	    </div>
+	  </header>
+
+		<div id="content">
+			<div id="container">
+				<div id="carousel">
+					<div id="slide01" class="slide">
+						<div class="text">
+							<img src="../images/slate/adrian janowiak.jpg" alt="Adrain" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide02" class="slide">
+						<div class="text">
+							<img src="../images/slate/alexis mills.jpg" alt="Alexis" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide03" class="slide">
+						<div class="text">
+							<img src="../images/slate/alice kirsch.jpg" alt="Alice" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide04" class="slide">
+						<div class="text">
+							<img src="../images/slate/antonio lopez.jpg" alt="Antonio" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide05" class="slide">
+						<div class="text">
+							<img src="../images/slate/bisher anadani.jpg" alt="Bisher" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide06" class="slide">
+						<div class="text">
+							<img src="../images/slate/brendan phillips.jpg" alt="Brendan" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide07" class="slide">
+						<div class="text">
+							<img src="../images/slate/brittany biel.jpg" alt="Brittany" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide08" class="slide">
+						<div class="text">
+							<img src="../images/slate/charles jetty.jpg" alt="Charles" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide09" class="slide">
+						<div class="text">
+							<img src="../images/slate/daniel okolo.jpg" alt="Daniel" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide10" class="slide">
+						<div class="text">
+							<img src="../images/slate/danielle moss.jpg" alt="Danielle" width="460" height="345">
+						</div>
+					</div>
+
+					<div id="slide11" class="slide">
+						<div class="text">
+							<img src="../images/slate/dylan jones.jpg" alt="Dylan" width="345" height="345">
+						</div>
+					</div>
+					<div id="slide12" class="slide">
+						<div class="text">
+							<img src="../images/slate/eric martinez.jpg" alt="Eric" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide13" class="slide">
+						<div class="text">
+							<img src="../images/slate/erin wilson.jpg" alt="Erin" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide14" class="slide">
+						<div class="text">
+							<img src="../images/slate/haley pederson.jpg" alt="Haley" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide15" class="slide">
+						<div class="text">
+							<img src="../images/slate/hugh riley.jpg" alt="Hugh" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide16" class="slide">
+						<div class="text">
+							<img src="../images/slate/john foster.jpg" alt="John" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide17" class="slide">
+						<div class="text">
+							<img src="../images/slate/josh kaseff.jpg" alt="Josh" width="460" height="345">
+						</div>
+					</div>
+
+					<div id="slide18" class="slide">
+						<div class="text">
+							<img src="../images/slate/martin doherty.jpg" alt="Martin" width="345" height="345">
+						</div>
+					</div>
+					<div id="slide19" class="slide">
+						<div class="text">
+							<img src="../images/slate/mary engen.jpg" alt="Mary" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide20" class="slide">
+						<div class="text">
+							<img src="../images/slate/mercedeh tavacoli.jpg" alt="Mercedeh" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide21" class="slide">
+						<div class="text">
+							<img src="../images/slate/michael shao.jpg" alt="Michael" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide22" class="slide">
+						<div class="text">
+							<img src="../images/slate/michael zhou.jpg" alt="Michael" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide23" class="slide">
+						<div class="text">
+							<img src="../images/slate/mitch reinig.jpg" alt="Mitch" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide24" class="slide">
+						<div class="text">
+							<img src="../images/slate/nick dykmann.jpg" alt="Nick" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide25" class="slide">
+						<div class="text">
+							<img src="../images/slate/noah ries.jpg" alt="Noah" width="345" height="345">
+						</div>
+					</div>
+					<div id="slide26" class="slide">
+						<div class="text">
+							<img src="../images/slate/noah steilen.jpg" alt="Noah" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide27" class="slide">
+						<div class="text">
+							<img src="../images/slate/reagan walsh.jpg" alt="Reagan" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide28" class="slide">
+						<div class="text">
+							<img src="../images/slate/sara muench.jpg" alt="Sara" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide29" class="slide">
+						<div class="text">
+							<img src="../images/slate/sarah smoot.jpg" alt="Srah" width="345" height="345">
+						</div>
+					</div>
+
+					<div id="slide30" class="slide">
+						<div class="text">
+							<img src="../images/slate/zach allen.jpg" alt="Zach" width="345" height="345">
+						</div>
+					</div>
+
+
+				</div>
+				<a href="#" id="ui-carousel-next"><span>next</span></a>
+				<a href="#" id="ui-carousel-prev"><span>prev</span></a>
+				<div id="pages"></div>
+			</div>
+		</div>
+<div id="footer">
+	 <p>Built by <a href="http://twitter.com/jackst96">@Jack Stevens</a> | Contact us <a href="https://www.facebook.com/OneKU2017/">Facebook</a> | <a href="https://www.instagram.com/oneku_/">Instagram</a></p>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-302059-5', 'shouldiuseacarousel.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

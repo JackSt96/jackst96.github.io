@@ -1,5 +1,5 @@
 body {
-	font: 16px/1.5 sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
 
 }
 
@@ -46,7 +46,7 @@ a:hover, a:focus {
 	padding: 10px 0;
 	margin-top: 10px;
 	font-size: .9em;
-	font-family: Ubuntu, sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 
 #logo { float: left; }
@@ -59,7 +59,7 @@ a:hover, a:focus {
   margin: 0;
 }
 .nav li {
-  font-family: Ubuntu, sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
   font-size: 1.2em;
   line-height: 40px;
   height: 40px;
@@ -124,7 +124,7 @@ a:hover, a:focus {
 	padding: 10px 0;
 	margin-top: 10px;
 	font-size: .9em;
-	font-family: Ubuntu, sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 
 #carousel {
@@ -169,7 +169,7 @@ a:hover, a:focus {
 }
 
 .slide p {
-	font: 26px/1 Ubuntu, sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
 	color: #4d4d4d;
 	margin: 0;
 	padding: 0;
@@ -177,7 +177,7 @@ a:hover, a:focus {
 }
 
 .slide p.cite {
-	font: 32px/1 Anton, sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
 	color: #ff5c43;
 	margin: 15px 0 0 0;
 	padding: 0;

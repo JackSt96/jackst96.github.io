@@ -16,6 +16,63 @@
   padding-bottom: 5rem;
 }
 
+#im {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/madymattie.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#im2 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/rotc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#im3 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/slate/adrian janowiak.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#im4 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/buttond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#im5 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/contact.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#im6 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/history.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .top1{
     min-height:780px;

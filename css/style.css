@@ -52,6 +52,7 @@ a:hover, a:focus {
 #logo { float: left; }
 
 .nav ul {
+	display: block;
   list-style: none;
   background-color: #B5D9EC;
   text-align: center;

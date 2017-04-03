@@ -29,9 +29,15 @@
   border-radius: 25px;
 /*  border: 2px solid #73AD21;*/
   padding: 20px;
-  background: #B5D9EC;
+  opacity: .5;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
 }
-
+.rounded.box:hover{
+  opacity: 1;
+}
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -43,7 +49,7 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   box-sizing: border-box; }
 .column,
 .columns {

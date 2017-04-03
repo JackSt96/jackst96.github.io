@@ -35,8 +35,8 @@
     position:abosolute;
     top:2px;
     left:20px;
-    background: #1F2256 url('../images/banner.jpg');
-    background-position: center;
+    background-image: url('../images/banner.jpg');
+    background-position: center center;
     background-size: cover;
     border-radius: 0px;
     z-index:999;

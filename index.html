@@ -49,7 +49,7 @@
       </div>
     </div>-->
   <div class="top1">
-    <div class="top2">
+    <div class="top2" align="middle">
         <div class="top3"></div>
     </div>
   </div>
@@ -83,14 +83,14 @@
   $( window ).scroll(function() {
       var windowScroll = $(window).scrollTop(),
       newHeight = imageHeight - windowScroll,
-      newWidth = imageWidth - windowScroll,
+      newWidth = newHeight *1.6,
       border1 = windowScroll/15,
       border2 = windowScroll/5,
-      newLMargin = leftMargin + windowScroll/2;
+      newLMargin = (leftMargin + windowScroll/2)*1.6;
        if(newHeight > stopHeight){
          $('.top3').css({'height': newHeight});
          $('.top3').css({'width': newWidth});
-         $('.top3').css({'margin-left': newLMargin});
+  //       $('.top3').css({'margin-left': newLMargin});
          $('.top3').css({'border-radius': border1});
        }else{
            $('.top3').css({'height': stopHeight});

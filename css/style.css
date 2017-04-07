@@ -51,6 +51,13 @@ a:hover, a:focus {
 
 #logo { float: left; }
 
+.discounts li
+{
+		overflow:auto;
+		padding-right: 10px;
+    margin-left: 35px;
+}
+
 .nav ul {
 	display: block;
   list-style: none;

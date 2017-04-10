@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+HTML5!!! Because, ya know, carousels are all Web 2.0 and stuff!
+-->
+
+<html lang="en">
+
+
+	<head>
+		<meta charset="utf-8" />
+		<!--
+		Meta? You want meta? Using a carousel to tell folks not to use carousels is meta!
+		-->
+		<title>One KU</title>
+		<!--
+		SPOILER ALERT: No!
+		-->
+
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"  type='text/css'>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+		<link type="text/css" rel="stylesheet" href="../css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="../css/style.css" />
+		<link type="text/css" rel="stylesheet" href="../css/rcarousel.css" />
+
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.core.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.widget.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ui.rcarousel.min.js"></script>
+		<!--
+		Holy crap! ^^^^^ That's a lot of files for a simple carousel! ^^^^ Yeah, but it's jQuery, so we're cool.
+		-->
+
+		<script type="text/javascript">
+			jQuery(function($) {
+				function generatePages() {
+					var _total, i, _link;
+
+					_total = $( "#carousel" ).rcarousel( "getTotalPages" );
+
+					for ( i = 0; i < _total; i++ ) {
+						_link = $( "<a href='#'></a>" );
+
+						$(_link)
+							.bind("click", {page: i},
+								function( event ) {
+									$( "#carousel" ).rcarousel( "goToPage", event.data.page );
+									event.preventDefault();
+								}
+							)
+							.addClass( "bullet off" )
+							.appendTo( "#pages" );
+					}
+
+					// mark first page as active
+					$( "a:eq(0)", "#pages" )
+						.removeClass( "off" )
+						.addClass( "on" )
+						.css( "background-image", "url(../images/page-on.png)" );
+
+				}
+
+				function pageLoaded( event, data ) {
+					$( "a.on", "#pages" )
+						.removeClass( "on" )
+						.css( "background-image", "url(../images/page-off.png)" );
+
+					$( "a", "#pages" )
+						.eq( data.page )
+						.addClass( "on" )
+						.css( "background-image", "url(../images/page-on.png)" );
+				}
+
+				$("#carousel").rcarousel(
+					{
+						visible: 1,
+						step: 1,
+						speed: 500,
+						auto: {
+							enabled: true,
+							interval: 3000
+							// HA HA! I HATE MY USERS!!! Especially the ones that aren't speed readers.
+						},
+						width: 345,
+						height: 400,
+						start: generatePages,
+						pageLoaded: pageLoaded
+					}
+				);
+
+				$( "#ui-carousel-next" )
+					.add( "#ui-carousel-prev" )
+					.add( ".bullet" )
+					.hover(
+						function() {
+							$( this ).css( "opacity", 0.7 );
+						},
+						function() {
+							$( this ).css( "opacity", 1.0 );
+						}
+					);
+			});
+		</script>
+
+	</head>
+	<body>
+	  <header>
+	    <div class="nav">
+				<a href="../index.html"><img src="../images/oneku3.jpg" width = "150" height = "50" id="logo" /><a>
+	      <ul>
+	        <li class="Candidates"><a class="active" href="Candidates.html">Candidates</a></li>
+	        <li class="Platforms"><a href="Platforms.html">Platforms</a></li>
+	        <li class="Slate"><a href="Slate2.html">Slate</a></li>
+					<li class="Discounts"><a href="Discounts.html">Discounts</a></li>
+					<li class="Contact"><a href="Contact.html">Contact</a></li>
+	      </ul>
+	    </div>
+	  </header>
+
+    <div>
+      <img src="../images/historypic.jpg" width = "600" height = "400" id="logo" />
+      <p>OneKU began when several students gathered together in Spring 2016 with the goal of unifying the University of Kansas. The previous fall had been a tumultuous time, both for Student Senate and the whole University. These students were determined to use Senate as a force for good on campus by improving the Jayhawk experience for each and every student. Their platforms centered around inclusivity and equity, while also focusing on ideas that were practical and realistic. Led by Presidential Candidate Stephonn Alcornn and Vice Presidential Candidate Gabby Naylor, every OneKU slated candidate won their Senate seat and the President/Vice President ticket won with over 90% of the vote. </p>
+			<p>The new Administration and Senate immediately got to work and they have already had success implementing several of their platforms, including the Business Summer Venture Program, which allows high school students with low socioeconomic status the opportunity to experience the KU School of Business has to offer in the hopes that it will inspire them to attend college.</p>
+			<p>It is because of the dedication and accomplishments of last year’s OneKU that we chose to continue their work. </p>
+		</div>
+
+<div id="footer">
+	<p><a href="https://studentsenate.ku.edu/elections-commission">Elections Commission </a> | Contact us <a href="https://www.facebook.com/OneKU2017/">Facebook</a> | <a href="https://www.instagram.com/oneku_/">Instagram</a> | <a href="mailto:oneku2017@gmail.com">Email</a></p>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-302059-5', 'shouldiuseacarousel.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

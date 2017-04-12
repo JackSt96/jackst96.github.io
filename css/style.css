@@ -59,6 +59,10 @@ a:hover, a:focus {
     margin-left: 35px;
 }
 
+.nav a.vote{
+	background-color: #FF0000;
+}
+
 .nav ul {
 	display: block;
   list-style: none;
